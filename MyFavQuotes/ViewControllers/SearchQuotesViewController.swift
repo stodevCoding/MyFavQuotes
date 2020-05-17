@@ -58,6 +58,16 @@ class SearchQuotesViewController: UIViewController, SearchQuotesByUserProtocol, 
         view.endEditing(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "QuotesDetail" {
+            let toViewController = segue.destination as! QuoteDetailViewController
+            let indexPath = sender as! IndexPath
+            let quote : ListQuotes = list[indexPath.row]
+            toViewController.quote = quote
+            
+        }
+        
+    }
     // MARK: - Table view data source
 }
 
@@ -89,6 +99,6 @@ extension SearchQuotesViewController: UITableViewDataSource {
         
         let quoteSelected = list[indexPath.row]
         print(quoteSelected)
-        
+        self.performSegue(withIdentifier: "mySegueIdentifier", sender: self)
     }
 }
