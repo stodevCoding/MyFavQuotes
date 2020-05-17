@@ -20,15 +20,12 @@ public protocol SearchQuotesByUserProtocol {
 
 public class SearchQuotesPresenter: QuotesByUserNetwortProtocol {
     public func handleJSON(json: JSON) {
-        //print(json["quotes"].count)
         var list = [ListQuotes]()
         for i in 0..<json["quotes"].count{
-            //print(json["quotes"][i])
             list.append(ListQuotes(json: json["quotes"][i]))
         }
         
         listener?.handleSearchQuotesByUser(quotes: list)
-        //print("HEYYYYYYYY \(list)")
     }
     var listener : SearchQuotesByUserProtocol?
     public init(listener: SearchQuotesByUserProtocol) {
