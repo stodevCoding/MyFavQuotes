@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LogInController: UIViewController {
 
+    @IBOutlet weak var userNameMailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var logNextBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func validateLogBtn(_ sender: Any) {
+        
+    }
+    
 }
 
