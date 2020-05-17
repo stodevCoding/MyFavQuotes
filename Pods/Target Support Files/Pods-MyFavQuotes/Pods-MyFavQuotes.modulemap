@@ -1,0 +1,6 @@
+framework module Pods_MyFavQuotes {
+  umbrella header "Pods-MyFavQuotes-umbrella.h"
+
+  export *
+  module * { export * }
+}
